@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-def plot_sinal(sinal, bits):
+def plot_sinal(sinal, bits, name):
     tempo = list(range(len(sinal)))
     plt.step(tempo, sinal, where='post')
     plt.ylim(-2, 2)
@@ -8,4 +8,5 @@ def plot_sinal(sinal, bits):
     plt.title(f'Codificação do sinal: {bits}')
     plt.xlabel('Tempo')
     plt.ylabel('Nível de Tensão')
-    plt.show()
+    plt.savefig('img/'+name+".png")  # salva como imagem
+    plt.close()
