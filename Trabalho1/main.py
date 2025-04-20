@@ -1,7 +1,7 @@
 from codificadores import b8zs, nrz_l, nrz_i, ami, pseudoternary, manchester, manchester_differential, hdb3, mlt_3
 from plot import plot_sinal
 
-bits = "01001110"
+bits = "010011"
 sinal_b8zs = b8zs(bits)
 sinal_nrzl = nrz_l(bits)
 sinal_nrzi = nrz_i(bits)

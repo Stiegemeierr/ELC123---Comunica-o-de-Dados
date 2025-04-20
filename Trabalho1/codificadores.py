@@ -64,16 +64,34 @@ def manchester(bits: str) -> list[int]:
         if bit == '0':
             result.extend([1, -1])  
         else:
-            result.extend([-1, -1])  
+            result.extend([-1, 1])  
     return result
+
+# def manchester_differential(bits: str) -> list[int]:
+#     result = []
+#     current_level = 1
+#     for bit in bits:
+#         if bit == '0':
+#             current_level *= -1
+#         result.extend([current_level, -current_level])
+#     return result
 
 def manchester_differential(bits: str) -> list[int]:
     result = []
-    current_level = 1
+    level = 1  
+
     for bit in bits:
-        if bit == '0':
-            current_level *= -1
-        result.extend([current_level, -current_level])
+        bit = int(bit)
+        if bit == 0:
+            level = -level
+            result.append(level)  
+            level = -level
+            result.append(level)  
+        else:
+            result.append(level)  
+            level = -level
+            result.append(level)  
+
     return result
 
 def hdb3(bits: str) -> list[int]:
@@ -124,9 +142,9 @@ def mlt_3(bits: str) -> list[int]:
 
     Pseudoternário - WORKING
 
-    Manchester - FIX 
+    Manchester - WORKING 
 
-    Manchester Diferencial - WORKING ? 
+    Manchester Diferencial - WORKING 
 
     b8zs - WORKING ?
 
