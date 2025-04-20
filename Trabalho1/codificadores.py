@@ -25,11 +25,11 @@ def b8zs(bits: str) -> list[int]:
     return result
 
 def nrz_l(bits: str) -> list[int]:
-    return [1 if bit == '1' else -1 for bit in bits]
+    return [1 if bit == '0' else -1 for bit in bits]
 
 def nrz_i(bits: str) -> list[int]:
     result = []
-    level = -1
+    level = 1
     for bit in bits:
         if bit == '1':
             level *= -1
@@ -116,7 +116,7 @@ def mlt_3(bits: str) -> list[int]:
 
 
 """ 
-    NRZ-L - FIX
+    NRZ-L - WORKING
 
     NRZ-I - WORKING
 

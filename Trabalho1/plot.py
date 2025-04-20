@@ -8,5 +8,5 @@ def plot_sinal(sinal, bits, name):
     plt.title(f'Codificação do sinal: {bits}')
     plt.xlabel('Tempo')
     plt.ylabel('Nível de Tensão')
-    plt.show() 
+    plt.savefig('img/'+name+'.png') 
     plt.close()
