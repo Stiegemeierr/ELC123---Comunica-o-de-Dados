@@ -1,0 +1,24 @@
+Link do docs pra editar a parte escrita no docs:
+https://docs.google.com/document/d/1L-9ow0S69zn7L47m7GjYAun4ypukXusP3pkENpX0Wpw/edit?usp=sharing
+
+
+Os códigos de linha são técnicas utilizadas para representar sinais digitais em meios físicos de transmissão, como cabos ou fibras ópticas. Eles desempenham um papel crucial na comunicação de dados, garantindo a integridade do sinal, a sincronização entre transmissor e receptor, e a eficiência na utilização da largura de banda. Este trabalho aborda três padrões de codificação de linha que não foram discutidos em aula: B8ZS, HDB3 e MLT-3. Cada um desses padrões apresenta características específicas que os tornam adequados para diferentes aplicações e cenários de transmissão.
+
+
+O B8ZS (Bipolar with 8-Zero Substitution) é um código de linha desenvolvido para resolver o problema de longas sequências de zeros em sinais bipolares, que podem causar perda de sincronização entre transmissor e receptor. Quando uma sequência de 8 zeros consecutivos é detectada, ela é substituída por uma sequência especial de pulsos que viola temporariamente a regra de alternância bipolar. Essa substituição garante que o sinal mantenha transições suficientes para a sincronização. O B8ZS é amplamente utilizado em sistemas de transmissão T1 nos Estados Unidos.
+
+
+O HDB3 (High-Density Bipolar 3-Zero) é uma variação do código AMI (Alternate Mark Inversion) projetada para resolver o problema de longas sequências de zeros em sinais digitais. No HDB3, sequências de 4 zeros consecutivos são substituídas por padrões que incluem uma violação de polaridade, garantindo a manutenção da densidade de pulsos e a sincronização do sinal. Esse código é amplamente utilizado em sistemas de transmissão E1 na Europa e em outras partes do mundo.
+
+
+O MLT-3 (Multi-Level Transmit - 3 Levels) é um código de linha que utiliza três níveis de tensão (-1, 0, +1) para representar os dados digitais. Ele opera de forma cíclica, alternando entre os níveis de tensão a cada transição de bit 1, enquanto os bits 0 não causam mudanças no sinal. Essa abordagem reduz a frequência de transição do sinal, diminuindo a largura de banda necessária para a transmissão. O MLT-3 é amplamente utilizado em redes Ethernet 100BASE-TX devido à sua eficiência em ambientes de alta velocidade.
+
+
+Os códigos de linha B8ZS, HDB3 e MLT-3 desempenham papéis fundamentais na comunicação de dados, cada um com características específicas que os tornam adequados para diferentes cenários de transmissão. Enquanto o B8ZS e o HDB3 são projetados para resolver problemas de sincronização em sinais bipolares, o MLT-3 se destaca pela eficiência em redes de alta velocidade. A escolha do código de linha adequado é essencial para garantir a integridade do sinal, a eficiência na utilização da largura de banda e a confiabilidade das comunicações digitais. Esses padrões continuam sendo amplamente utilizados em sistemas modernos, demonstrando sua relevância na área de telecomunicações.
+
+
+- TANENBAUM, Andrew S.; WETHERALL, David J. Redes de Computadores. 5ª ed. Pearson, 2011.
+- FOROUZAN, Behrouz A. Comunicação de Dados e Redes de Computadores. 5ª ed. McGraw-Hill, 2012.
+- IEEE Standards Association. IEEE 802.3 Ethernet Working Group. Disponível em: <https://standards.ieee.org>.
+
+
