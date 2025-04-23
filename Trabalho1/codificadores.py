@@ -126,6 +126,35 @@ def mlt_3(bits: str) -> list[int]:
         result.append(levels[state_index])
     return result
 
+def ternary_nrz(data: str) -> list[int]:
+    result = []
+    last_level = 0
+
+    for bit in data:
+        if bit == '0':
+            if last_level >= 0:
+                last_level = -1
+            else:
+                last_level = 0
+        else:
+            if last_level <= 0:
+                last_level = 1
+            else:
+                last_level = 0
+        result.append(last_level)
+    return result
+
+def unipolar_rz(data: str) -> list[int]:
+
+    result = []
+
+    for bit in data:
+        if bit == '1':
+            result.extend([1, 0])
+        else: 
+            result.extend([0, 0])
+    
+    return result
 
 """ 
     NRZ-L - WORKING
@@ -143,5 +172,11 @@ def mlt_3(bits: str) -> list[int]:
     b8zs - WORKING 
 
     hdb3 - WORKING
+
+    unipolar - WORKING
+
+    ternary - WORKING
+
+    mlt 3 WORKING
 
 """
