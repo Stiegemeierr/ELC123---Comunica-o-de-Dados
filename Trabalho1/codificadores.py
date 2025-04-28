@@ -29,7 +29,7 @@ def nrz_l(bits: str) -> list[int]:
 
 def nrz_i(bits: str) -> list[int]:
     result = []
-    level = 1
+    level = -1
     for bit in bits:
         if bit == '1':
             level *= -1
@@ -113,7 +113,6 @@ def hdb3(bits: str) -> list[int]:
                 result.append(0)
             i += 1
     return result
-
 
 def mlt_3(bits: str) -> list[int]:
     result = []
