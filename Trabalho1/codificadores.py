@@ -156,26 +156,48 @@ def unipolar_rz(data: str) -> list[int]:
     return result
 
 """ 
-    NRZ-L - WORKING
+    NRZ-L - bit 0: tensao 1     I    bit 1: tensao 0
 
-    NRZ-I - WORKING
+    NRZ-I - bit 0: mantem a mesma tensao    I   bit 1: inverte a tensao 
 
-    AMI - WORKING 
+    AMI - bit 0: tensao 0   I   bit 1: inverte tensao (-1, 1) 
 
-    Pseudoternário - WORKING
+    Pseudoternário - bit 0: inverte tensao (-1, 1)      I       bit 1: tensao 0      
 
-    Manchester - WORKING 
+    Manchester - bit 0: descida (1, 0)     I       bit 1: subida (0, 1)
 
-    Manchester Diferencial - WORKING 
+    Manchester Diferencial - bit 0: inverte [(1, 0), (0, 1)]    I   bit 1: nao inverte
 
-    b8zs - WORKING 
+    b8zs - eh um AMI que quando tem 1 seguido de 00000000 retorna 000+-0-+, se for -1 retorna 000-+0+-
 
-    hdb3 - WORKING
+    hdb3 - eh um AMI que (contendo 0000):
+            1: {
+                par: -00-
+                impar: 000+
+            }
+            -1 {
+                par: +00+
+                impar: 000-
+            }
 
-    unipolar - WORKING
+    unipolar - bit 0: fica um ciclo com tensao 0    I   bit 1: fica meio periodo em 1
 
-    ternary - WORKING
+    ternary - 
+        0: {
+            anterior: {
+                1: -1
+                0: -1
+                -1: 0
+            }
+        }
+        1: {
+            anterior: {
+                1: 0
+                0: 1
+               -1: 1
+            }    
+        }
 
-    mlt 3 WORKING
+    mlt 3 - bit 0: tensao mantem a mesma        I       bit 1: vai alternando entre 1 -> 0 -> -1 -> 0
 
 """
